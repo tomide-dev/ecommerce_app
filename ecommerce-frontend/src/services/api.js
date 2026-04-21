@@ -1,9 +1,9 @@
-const BASE_URL = "http://127.0.0.1:5000";
+const API_URL = "http://localhost:5000";
 
 // 🔐 LOGIN
 export const login = async (form) => {
     try {
-        const response = await fetch(`${BASE_URL}/auth/login`, {
+        const response = await fetch(`${API_URL}/auth/login`, {
             method: "POST",
             mode: "cors",
             headers: {
@@ -30,7 +30,7 @@ export const login = async (form) => {
 // 🛒 GET PRODUCTS (Protected Route)
 export const getProducts = async (token) => {
     try {
-        const response = await fetch(`${BASE_URL}/products`, {
+        const response = await fetch(`${API_URL}/products`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`, // 🔥 VERY IMPORTANT
